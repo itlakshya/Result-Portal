@@ -146,7 +146,7 @@
         <div class="logo">
             <img src="{% static 'images/LOGO FOR WEBSITE-01_1683719447.webp' %}" alt="Company Logo" style="width: 200px;">
         </div>
-        <h1 class="result-heading">B VOC 2022 - First Semester Result</h1>
+        <h1 class="result-heading">B VOC 2023 - First Semester Result</h1>
      
         <h4>NAME: {{user.Name}}</h4>
         <h4>ROLLNUMBER: {{user.Rollnumber}}</h4>
@@ -154,37 +154,46 @@
             <tr>
                 <th></th>
                 <th>U E Marks</th>
-                <th>I A Marks</th>
+                <th>IA/CA Marks</th>
                 <th>Total Marks</th>
                 <th>Grade</th>
             </tr>
             <tr>
-                <th>Financial Reporting(F-7)</th>
-                <td>85</td>
-                <td>75</td>
-                <td>160</td>
-                <td>A</td>
+                <th>ENGLISH FOR FINANCIAL
+                    PROFESSIONALS</th>
+                <td>{{user.EFFP_UEM}}</td>
+                <td>{{user.EFFP_IAM}}</td>
+                <td>{{user.EFFP_TM}}</td>
+                <td>{{user.EFFP_G}}</td>
             </tr>
             <tr>
-                <th>Financial Management(F-9)</th>
-                <td>92</td>
-                <td>88</td>
-                <td>180</td>
-                <td>A+</td>
+                <th>ACCOUNTANT IN BUSINESS (F-
+                    1)</th>
+                <td>{{user.AIB_UEM}}</td>
+                <td>{{user.AIB_IAM}}</td>
+                <td>{{user.AIB_TM}}</td>
+                <td>{{user.AIB_G}}</td>
             </tr>
             <tr>
-                <th>Audit And Assurance(F-8)</th>
-                <td>78</td>
-                <td>80</td>
-                <td>158</td>
-                <td>A-</td>
+                <th>FINANCIAL ACCOUNTING (F-3)</th>
+                <td>{{user.FA_UEM}}</td>
+                <td>{{user.FA_IAM}}</td>
+                <td>{{user.FA_TM}}</td>
+                <td>{{user.FA_G}}</td>
             </tr>
             <tr>
-                <th>IT For Finance and Buissines</th>
-                <td>88</td>
-                <td>90</td>
-                <td>178</td>
-                <td>A</td>
+                <th>AE-GROUP One</th>
+                <td>{{user.AGO_UEM}}</td>
+                <td>{{user.AGO_IAM}}</td>
+                <td>{{user.AGO_TM}}</td>
+                <td>{{user.AGO_G}}</td>
+            </tr>
+            <tr>
+                <th>Skill-GROUP One</th>
+                <td>{{user.SGO_UEM}}</td>
+                <td>{{user.SGO_IAM}}</td>
+                <td>{{user.SGO_TM}}</td>
+                <td></td>
             </tr>
             <tr style="height: 10px;">
                 <td style="background-color: rgb(233, 233, 235);" colspan="5" ></td>
@@ -192,31 +201,35 @@
             
             <tr>
                 <th colspan="2">Total theory marks</th>
-                <td colspan="4" style="text-align: center ;">85</td>
+                <td colspan="4" style="text-align: center ;"></td>
             </tr>
             <tr>
                 <th colspan="2">Total internal marks</th>
-                <td colspan="4" style="text-align: center;">85</td> 
+                <td colspan="4" style="text-align: center;">{{user.TIM}}</td> 
+            </tr>
+            <tr>
+                <th colspan="2">Total CA Marks</th>
+                <td colspan="4" style="text-align: center;">{{user.TCM}}</td> 
             </tr>
             <tr>
                 <th colspan="2">Grand Total</th>
-                <td colspan="4" style="text-align: center;">85</td> 
+                <td colspan="4" style="text-align: center;">{{user.GT}}</td> 
             </tr>
             <tr>
                 <th colspan="2">Percentage</th>
-                <td style="text-align: center;" colspan="4">85</td> 
+                <td style="text-align: center;" colspan="4">{{user.P}}</td> 
             </tr>
             <tr>
                 <th colspan="2">Result</th>
-                <td colspan="4" style="text-align: center;">85</td> 
+                <td colspan="4" style="text-align: center;">{{user.R}}</td> 
             </tr>
             <tr>
                 <th colspan="2">No of Subject failed</th>
-                <td colspan="4" style="text-align: center;">85</td> 
+                <td colspan="4" style="text-align: center;">{{user.NOSF}}</td> 
             </tr>
             <tr>
                 <th colspan="2">SGPA</th>
-                <td colspan="4" style="text-align: center;">85</td> 
+                <td colspan="4" style="text-align: center;">{{user.S}}</td> 
             </tr>
         </table>
     </div>
