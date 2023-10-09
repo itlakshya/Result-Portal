@@ -146,7 +146,7 @@
         <div class="logo">
             <img src="{% static 'images/LOGO FOR WEBSITE-01_1683719447.webp' %}" alt="Company Logo" style="width: 200px;">
         </div>
-        <h1 class="result-heading">B VOC 2023 - First Semester Result</h1>
+        <h1 class="result-heading">B VOC 2020 Sem-5 Result</h1>
      
         <h4>NAME: {{user.Name}}</h4>
         <h4>ROLLNUMBER: {{user.Rollnumber}}</h4>
@@ -159,49 +159,47 @@
                 <th>Grade</th>
             </tr>
             <tr>
-                <th>ENGLISH FOR FINANCIAL
-                    PROFESSIONALS</th>
+                <th>Strategic Business Reporting ( P-II)</th>
                 <td>{{user.EFFP_UEM}}</td>
                 <td>{{user.EFFP_IAM}}</td>
                 <td>{{user.EFFP_TM}}</td>
                 <td>{{user.EFFP_G}}</td>
             </tr>
             <tr>
-                <th>ACCOUNTANT IN BUSINESS (F-
-                    1)</th>
+                <th>Advanced Financial Management </th>
                 <td>{{user.AIB_UEM}}</td>
                 <td>{{user.AIB_IAM}}</td>
                 <td>{{user.AIB_TM}}</td>
                 <td>{{user.AIB_G}}</td>
             </tr>
             <tr>
-                <th>FINANCIAL ACCOUNTING (F-3)</th>
+                <th>Advanced Performance  Management (P-V)</th>
                 <td>{{user.FA_UEM}}</td>
                 <td>{{user.FA_IAM}}</td>
                 <td>{{user.FA_TM}}</td>
                 <td>{{user.FA_G}}</td>
             </tr>
             <tr>
-                <th>AE-GROUP One</th>
+                <th>Ethics &  Strategic Business Leader (P-I & P-II)</th>
                 <td>{{user.AGO_UEM}}</td>
                 <td>{{user.AGO_IAM}}</td>
                 <td>{{user.AGO_TM}}</td>
                 <td>{{user.AGO_G}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <th>Skill-GROUP One</th>
                 <td>{{user.SGO_UEM}}</td>
                 <td>{{user.SGO_IAM}}</td>
                 <td>{{user.SGO_TM}}</td>
                 <td></td>
-            </tr>
+            </tr> -->
             <tr style="height: 10px;">
                 <td style="background-color: rgb(233, 233, 235);" colspan="5" ></td>
             </tr>
             
             <tr>
                 <th colspan="2">Total theory marks</th>
-                <td colspan="4" style="text-align: center ;"></td>
+                <td colspan="4" style="text-align: center ;">{{user.TTM}}</td>
             </tr>
             <tr>
                 <th colspan="2">Total internal marks</th>

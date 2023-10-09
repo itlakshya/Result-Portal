@@ -19,10 +19,6 @@ class User(models.Model):
     AGO_IAM = models.CharField(max_length=300, default='')
     AGO_TM = models.CharField(max_length=300, default='')
     AGO_G = models.CharField(max_length=300, default='')
-    SGO_UEM = models.CharField(max_length=300, default='')
-    SGO_IAM = models.CharField(max_length=300, default='')
-    SGO_TM = models.CharField(max_length=300, default='')
-    SGO_G = models.CharField(max_length=300, default='')
     TTM = models.CharField(max_length=300, default='')
     TIM = models.CharField(max_length=300, default='')
     TCM = models.CharField(max_length=300, default='')
@@ -31,7 +27,10 @@ class User(models.Model):
     R = models.CharField(max_length=300, default='')
     NOSF = models.CharField(max_length=300, default='', null=True)
     S = models.CharField(max_length=300, default='', null=True)
-
+    # SGO_UEM = models.CharField(max_length=300, default='')
+    # SGO_IAM = models.CharField(max_length=300, default='')
+    # SGO_TM = models.CharField(max_length=300, default='')
+    # SGO_G = models.CharField(max_length=300, default='')
 
 
 
