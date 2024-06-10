@@ -13,6 +13,9 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            margin: 0;
+            background-color: white;
+            overflow: hidden;
         }
 
         .table-container {
@@ -23,6 +26,8 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
 
         table {
@@ -73,6 +78,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
+            z-index: 3;
         }
 
         .download-container button {
@@ -97,27 +103,27 @@
         .logo img {
             width: 150px;
         }
+
         .logox {
             position: absolute;
             top: 20px;
             left: 20px;
             width: 350px; /* Adjust the width as needed */
             height: auto;
+            z-index: 3;
         }
 
         /* Media query for desktop */
         @media (min-width: 601px) {
             body {
-                /* background-image: url('{% static 'images/pexels-photo-1381679.webp' %}'); */
-                /* background-size: cover; */
+                /* additional desktop-specific styles */
             }
         }
 
         /* Media query for mobile */
         @media (max-width: 600px) {
             body {
-                /* background-image: url('{% static 'images/pexels-photo-1381679.webp' %}'); */
-                /* background-size: cover; */
+                /* additional mobile-specific styles */
             }
 
             h1 {
@@ -133,20 +139,36 @@
                 padding: 10px;
                 max-width: 100%;
             }
+
             #grey {
                 background-color: grey;
             }
         }
+
+        .snowflake {
+            position: fixed;
+            top: -50px;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
 </head>
-<body style="background-color: rgb(236, 250, 252);">
+<body>
     <img class="logox" src="{% static 'images/LOGO FOR WEBSITE-01_1683719447.webp' %}" alt="Company Logo" >
 
     <div class="table-container">
         <div class="logo">
             <img src="{% static 'images/LOGO FOR WEBSITE-01_1683719447.webp' %}" alt="Company Logo" style="width: 200px;">
         </div>
-        <h1 class="result-heading">BVOC 2024 5th Semester Result</h1>
+        <h1 class="result-heading">BVOC 2024 1st Semester Result</h1>
      
         <h4>NAME: {{user.Name}}</h4>
         <h4>ROLLNUMBER: {{user.Rollnumber}}</h4>
@@ -159,28 +181,28 @@
                 <th>Grade</th>
             </tr>
             <tr>
-                <th>ELECTIVE GROUP-ONE</th>
+                <th>ENGLISH FOR FINANCIAL PROFESSIONALS</th>
                 <td>{{user.EFFP_UEM}}</td>
                 <td>{{user.EFFP_IAM}}</td>
                 <td>{{user.EFFP_TM}}</td>
                 <td>{{user.EFFP_G}}</td>
             </tr>
             <tr>
-                <th>ELECTIVE GROUP-TWO</th>
+                <th>ACCOUNTANT IN BUSINESS (F- 1) </th>
                 <td>{{user.AIB_UEM}}</td>
                 <td>{{user.AIB_IAM}}</td>
                 <td>{{user.AIB_TM}}</td>
                 <td>{{user.AIB_G}}</td>
             </tr>
             <tr>
-                <th>ELECTIVE GROUP-THREE </th>
+                <th>FINANCIAL ACCOUNTING (F-3)</th>
                 <td>{{user.FA_UEM}}</td>
                 <td>{{user.FA_IAM}}</td>
                 <td>{{user.FA_TM}}</td>
                 <td>{{user.FA_G}}</td>
             </tr>
             <tr>
-                <th>GENERIC-GROUP ONE </th>
+                <th>AE - GROUP One </th>
                 <td>{{user.AGO_UEM}}</td>
                 <td>{{user.AGO_IAM}}</td>
                 <td>{{user.AGO_TM}}</td>
@@ -237,6 +259,22 @@
     </div>
 
     <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('img');
+            snowflake.src = '{% static "images/emblem.png" %}'; // Use your snowflake image here
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration between 2 and 5 seconds
+            snowflake.style.opacity = Math.random();
+            snowflake.style.width = Math.random() * 40 + 20 + 'px'; // Random size between 10px and 40px
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000); // Remove the snowflake after it falls
+        }
+
         function downloadAsPDF() {
             const button = document.querySelector('.download-container');
             button.style.display = 'none'; // Hide the download button temporarily
@@ -255,6 +293,8 @@
 
             button.style.display = 'block'; // Show the download button again
         }
+
+        setInterval(createSnowflake, 300); // Create a new snowflake every 300ms
     </script>
 </body>
 </html>
